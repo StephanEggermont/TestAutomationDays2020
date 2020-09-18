@@ -11,5 +11,6 @@
      load.
 ```
 
-Then do-it TAD2020Tutorial open
+Then do-it ```TAD2020Tutorial open```
+
 Not compatible with Pharo 9, uses Glamour
