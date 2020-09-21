@@ -43,7 +43,9 @@ DDDPresentation >> create [
 			self realOptionsSlide.self commitsLateSlide.
 			self smallIsBeautifulSlide.self gtoolkitIsSmall.
 			self visualizingTheCode.
-			self pharo101Slide}.
+			self tourSlide.
+			self pharo101Slide.
+			self underTheHood}.
 	^ slideshow makeArrowsVisible
 ]
 
@@ -72,19 +74,19 @@ DDDPresentation >> experimentsSlide [
 
 { #category : #accessing }
 DDDPresentation >> gettingStartedSlide [
-	^ GtTextAndElementSlide new
-		newTextWithFormat: (self subtitleString: 'Getting started' );
+	^ GtLabelAndElementSlide new
+		newTextWithFormat: (self subtitleString: 'Getting started');
 		newTextWithFormat:
-			(self
-				descriptionString:
-					'Install the workshop in the image, and switching to the Pharo style exercises');
+			(self descriptionString: 'Install the workshop in the image,');
+		newTextWithFormat:
+			(self descriptionString: 'then open the git tab and load the missing package ');
 		element: [ GtPlaygroundSlide new
-				snippets: {' Metacello new
+				snippets:
+					{' Metacello new
 	githubUser: ''StephanEggermont'' project: ''TestAutomationDays2020'' commitish: #master path: ''src'';
 	baseline: ''TAD2020'' ;
-	load.' . 'PharoLightTheme beCurrent' . 'TAD2020Tutorial open' . 'GTPlayground open'.'GTGenericStackDebugger register'.'GtMoldableDebugger register'};
-				asElement ];
-		elementWeight: 0.7	
+	load.'};
+				asElement ]
 ]
 
 { #category : #accessing }
@@ -196,20 +198,47 @@ DDDPresentation >> titleSlide [
 ]
 
 { #category : #accessing }
+DDDPresentation >> tourSlide [
+	^ GtSlideshowSlide new
+		textWithFormat:
+			'A tour through GToolkit'
+				asRopedText glamorousRegularFont;
+		slideshow: [ GtTour new create ] withTitle: 'Tour'
+]
+
+{ #category : #accessing }
+DDDPresentation >> underTheHood [
+	^ GtLabelAndElementSlide new
+		newTextWithFormat: (self subtitleString: 'Going to the Morphic world' );
+		newTextWithFormat:
+			(self
+				descriptionString:
+					'And switching to the Pharo style exercises');
+		element: [ GtPlaygroundSlide new
+				snippets: { 'PharoLightTheme beCurrent' . '"First open the morphic world now"
+TAD2020Tutorial open' . 'GTPlayground open'.'"Switch to morphic debugger"
+GTGenericStackDebugger register'.'"And back to the GToolkit one"
+GtMoldableDebugger register'};
+				asElement ]	
+]
+
+{ #category : #accessing }
 DDDPresentation >> visualizingTheCode [
 	^ GtLabelAndElementSlide new
 		newTextWithFormat: (self subtitleString: 'Visualizing the Code');
 		newTextWithFormat:
 			(self
 				descriptionString:
-					'Some quality attributes of the code we are writing are much easier to see in a simple visualization of it. Here we show the definition of different kinds of slides.');
+					'Some quality attributes of the code we are writing are much easier to see in a simple visualization of it.');
+		newTextWithFormat:
+			(self
+				descriptionString: ' Here we show the definition of different kinds of slides.');
 		element: [ GtPlaygroundSlide new
-				snippets: {'| view |
+				snippets:
+					{'| view |
 view := GtMondrian new.
 view nodes with: (GtSlide withAllSubclasses).
-view'.
-
-'| view |
+view' . '| view |
 view := GtMondrian new.
 view nodes
 	shape: [ 

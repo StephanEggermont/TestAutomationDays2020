@@ -50,7 +50,7 @@ DDDSlide >> initialize [
 DDDSlide >> newText: aString size: aSize color: aColor at: aPosition [
 	|attr|
 	attr := {
-		BlFontFamilyAttribute named: 'Gillius'.
+		BlFontFamilyAttribute named: 'Helvetica'.
 		BlFontWeightAttribute light.
 		BlFontSizeAttribute size: aSize.
 		BlTextForegroundAttribute paint: aColor.
