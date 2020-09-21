@@ -327,7 +327,7 @@ there is a lot of uncertainty. '
 { #category : #accessing }
 DDDPresentation >> whatCanWeDoSlide [
 	^(DDDPostitSlide new) postitText: ('What can
-we do?' asRopedText fontSize: 103; glamorousRegularFont)
+we do?' asRopedText fontSize: 95; foreground: Color white; fontName: 'Gillius')
 ]
 
 { #category : #accessing }
