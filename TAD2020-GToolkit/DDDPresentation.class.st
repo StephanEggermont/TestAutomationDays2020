@@ -43,6 +43,7 @@ DDDPresentation >> create [
 			self realOptionsSlide.self commitsLateSlide.
 			self smallIsBeautifulSlide.self gtoolkitIsSmall.
 			self visualizingTheCode.
+			self reuseSlide. self reuseInGToolkitSlide.
 			self tourSlide.
 			self pharo101Slide.
 			self underTheHood}.
@@ -105,6 +106,19 @@ DDDPresentation >> imageDirectory [
 	^(IceRepository registeredRepositoryIncludingPackage: self class package) location /'images'
 ]
 
+{ #category : #accessing }
+DDDPresentation >> outOfACornerSlide [
+	^ DDDSlide new
+		newText: 'Program yourself out of a corner' asUppercase
+			size: 100
+			color: self colorTextGray
+			at: 100 @ 150;
+		newText: 'Meta programming and code rewriting'
+			size: 38
+			color: self colorTextRed
+			at: 100 @ 380
+]
+
 { #category : #'api - instantiation' }
 DDDPresentation >> pharo101Slide [
 	^ GtSlideshowSlide new
@@ -119,6 +133,22 @@ DDDPresentation >> realOptionsSlide [
 	^DDDSlide new
 		newText: 'Real Options' asUppercase size: 140 color: self colorTextGray at: 100@200;
 		newText: 'Never commit early unless you know why' size: 32 color: self colorTextRed at: 520@340
+]
+
+{ #category : #accessing }
+DDDPresentation >> reuseInGToolkitSlide [
+	^DDDSlide new
+		newText: 'Reuse in GToolkit' asUppercase size: 80 color: self colorTextGray at: 100@200;
+		newText: 
+'• Domain Specific Languages
+• Good Refactoring Tools' size: 64 color: self colorTextGray at: 100@350
+]
+
+{ #category : #accessing }
+DDDPresentation >> reuseSlide [
+	^DDDSlide new
+		newText: 'Reuse!' asUppercase size: 250 color: self colorTextGray at: 100@200;
+		newText: 'More than applications' size: 48 color: self colorTextRed at: 470@450
 ]
 
 { #category : #accessing }
