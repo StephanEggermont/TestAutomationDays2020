@@ -12,6 +12,7 @@ Class {
 
 { #category : #examples }
 TAD2020Morph class >> closeAll [ 
+	"Remove all open instances from the world"
 	<example>
 	TAD2020Morph allInstances do: [ :each | each delete ]
 ]
