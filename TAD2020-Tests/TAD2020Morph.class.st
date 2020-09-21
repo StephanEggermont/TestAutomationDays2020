@@ -10,6 +10,18 @@ Class {
 	#category : #'TAD2020-Tests'
 }
 
+{ #category : #examples }
+TAD2020Morph class >> closeAll [ 
+	<example>
+	TAD2020Morph allInstances do: [ :each | each delete ]
+]
+
+{ #category : #examples }
+TAD2020Morph class >> open [ 
+	<example>
+	^self new openInWorld
+]
+
 { #category : #initialize }
 TAD2020Morph >> defaultBounds [
 "answer the default bounds for the receiver"

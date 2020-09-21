@@ -4,6 +4,12 @@ Class {
 	#category : #'TAD2020-Tutorial'
 }
 
+{ #category : #public }
+TAD2020Tutorial class >> open [
+	<example>
+	^self browser openOn: self new tutorial
+]
+
 { #category : #accessing }
 TAD2020Tutorial class >> title [
 	^'Test Automation Days 2020: Debugger Driven Development'
@@ -123,7 +129,7 @@ This was just the happy case. Add a testcase verifying
 what happens when I''m not happy. 
 
 This exercise is documented in this tutorial 
-as the goalsExercise method of ObjectGroupBerlin2017Tutorial. 
+as the goalsExercise method of TAD2020Tutorial. 
 Document the new testcase, add it as unhappyCase to the  
 class and add it to my children
 ';
