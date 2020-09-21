@@ -5,33 +5,6 @@ Class {
 }
 
 { #category : #accessing }
-DDDPresentation >> agileManifestoSlide [
-	^(GtTextSlide new
-				newTextWithFormat:(
-'We are uncovering better ways of developing
-software by doing it and helping others do it.
-Through this work we have come to value:'
-						asRopedText
-						glamorousRegularFont;
-						fontSize: 18);
-				newTextWithFormat:(
-'Individuals and interactions over processes and tools
-Working software over comprehensive documentation
-Customer collaboration over contract negotiation
-Responding to change over following a plan'
-						asRopedText
-						glamorousRegularFont;
-						fontSize: 18);
-				newTextWithFormat:(
-'That is, while there is value in the items on
-the right, we value the items on the left more'
-						asRopedText
-						glamorousRegularFont;
-						fontSize: 18)						).						.
-
-]
-
-{ #category : #accessing }
 DDDPresentation >> bddSlide [
 	^(GtTextSlide new
 				newTextWithFormat:(
@@ -84,9 +57,11 @@ DDDPresentation >> create [
 			self whatCanWeDoSlide.
 			self cynefinSlide.
 			self experimentsSlide.
+			self realOptionsSlide.
 			self commitsLateSlide.
+			self smallIsBeautifulSlide.
+			self gtoolkitIsSmall.
 			self wardleySlide.
-			self agileManifestoSlide.
 			self imageSlide.
 			self bddSlide.
 			self visualizingTheCode.
@@ -148,6 +123,16 @@ DDDPresentation >> gettingStartedSlide [
 	load.' . 'PharoLightTheme beCurrent' . 'TAD2020Tutorial open' . 'GTPlayground open'.'GTGenericStackDebugger register'.'GtMoldableDebugger register'};
 				asElement ];
 		elementWeight: 0.7	
+]
+
+{ #category : #accessing }
+DDDPresentation >> gtoolkitIsSmall [
+^DDDSlide new
+		newText: 'GToolkit is Small' asUppercase size: 80 color: self colorTextGray at: 100@200;
+	newText: '• Simple Language
+• Bootstrapped image ~ 200KB
+• Everything is an Object, Message Passing
+• Constant Refactoring' size: 64 color: self colorTextGray at: 100@350
 ]
 
 { #category : #accessing }
@@ -216,6 +201,13 @@ DDDPresentation >> pharo101Slide [
 ]
 
 { #category : #accessing }
+DDDPresentation >> realOptionsSlide [
+	^DDDSlide new
+		newText: 'Real Options' asUppercase size: 140 color: self colorTextGray at: 100@200;
+		newText: 'Never commit early unless you know why' size: 32 color: self colorTextRed at: 520@320
+]
+
+{ #category : #accessing }
 DDDPresentation >> slideTitleTextAttributes [
 	^{
 		BlFontFamilyAttribute named: 'Gillius'.
@@ -224,6 +216,13 @@ DDDPresentation >> slideTitleTextAttributes [
 		BlTextSpacingAttribute spacing: 100.
 		BlTextForegroundAttribute paint: (Color fromHexString: '535353').
 }
+]
+
+{ #category : #accessing }
+DDDPresentation >> smallIsBeautifulSlide [
+	^DDDSlide new
+		newText: 'Small' asUppercase size: 58 color: self colorTextRed at: 200@200;
+		newText: 'Is beautiful' asUppercase size: 64 color: self colorTextGray at: 100@250
 ]
 
 { #category : #accessing }
