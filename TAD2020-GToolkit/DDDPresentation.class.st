@@ -26,7 +26,6 @@ DDDPresentation >> commitsLateSlide [
 		newText: 
 '• Compile at Runtime
 • Object decides what to do with a message
-• Visibility of System State
 • Example (test) Driven Design' size: 64 color: self colorTextGray at: 100@350
 ]
 
@@ -41,6 +40,7 @@ DDDPresentation >> create [
 			self whatCanWeDoSlide.
 			self cynefinSlide.self experimentsSlide.
 			self realOptionsSlide.self commitsLateSlide.
+			self objectImageSlide.
 			self smallIsBeautifulSlide.self gtoolkitIsSmall.
 			self visualizingTheCode.
 			self reuseSlide. self reuseInGToolkitSlide.
@@ -69,7 +69,7 @@ DDDPresentation >> experimentsSlide [
 		newText: 'Experiments in GToolkit' asUppercase size: 80 color: self colorTextGray at: 100@200;
 		newText: 
 '• Fast Feedback
-• Adaptable Tools
+• Moldable Tools
 • Visibility of System State
 • Late Binding' size: 64 color: self colorTextGray at: 100@350
 ]
@@ -85,7 +85,7 @@ DDDPresentation >> gettingStartedSlide [
 		element: [ GtPlaygroundSlide new
 				snippets:
 					{' Metacello new
-	githubUser: ''StephanEggermont'' project: ''TestAutomationDays2020'' commitish: #master path: ''src'';
+	githubUser: ''StephanEggermont'' project: ''TestAutomationDays2020'' commitish: #master path: '''';
 	baseline: ''TAD2020'' ;
 	load.'};
 				asElement ]
@@ -105,6 +105,13 @@ DDDPresentation >> gtoolkitIsSmall [
 { #category : #accessing }
 DDDPresentation >> imageDirectory [
 	^(IceRepository registeredRepositoryIncludingPackage: self class package) location /'images'
+]
+
+{ #category : #accessing }
+DDDPresentation >> objectImageSlide [
+	^DDDSlide new
+		newText: 'Enable incremental CI/CD' size: 38 color: self colorTextRed at: 147@200;
+		newText: 'Object Images' asUppercase size: 87 color: self colorTextGray at: 100@250
 ]
 
 { #category : #accessing }
@@ -300,7 +307,8 @@ view layout horizontalTree.
 { #category : #accessing }
 DDDPresentation >> wardleySlide [
 	^GtFilePictureSlide new
-		fileReference: self imageDirectory / 'wardley.png'
+		fileReference: self imageDirectory / 'wardley.png';
+		background: Color transparent
 ]
 
 { #category : #accessing }
