@@ -118,7 +118,7 @@ DDDPresentation >> pharo101Slide [
 DDDPresentation >> realOptionsSlide [
 	^DDDSlide new
 		newText: 'Real Options' asUppercase size: 140 color: self colorTextGray at: 100@200;
-		newText: 'Never commit early unless you know why' size: 32 color: self colorTextRed at: 520@320
+		newText: 'Never commit early unless you know why' size: 32 color: self colorTextRed at: 520@340
 ]
 
 { #category : #accessing }
