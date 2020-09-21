@@ -5,22 +5,6 @@ Class {
 }
 
 { #category : #accessing }
-DDDPresentation >> bddSlide [
-	^(GtTextSlide new
-				newTextWithFormat:(
-'Adoption of BDD is low because
-Convincing team members to do BDD is difficult
-Lack of experience leads to poorly written scenarios
-Duplications in BDD scenarios cause performance issues
-Specifications become difficult to change for fault correction
-Need to maintain new BDD tests increases software development time
-Cost of product maintenance becomes higher'
-						asRopedText
-						glamorousRegularFont;
-						fontSize: 18))
-]
-
-{ #category : #accessing }
 DDDPresentation >> colorPostitYellow [
 	^Color fromHexString: 'F7CF6C'
 ]
@@ -55,19 +39,11 @@ DDDPresentation >> create [
 			{self titleSlide.self gettingStartedSlide.
 			self whyGtoolkit.self softwareGrows.self technicalDebt.
 			self whatCanWeDoSlide.
-			self cynefinSlide.
-			self experimentsSlide.
-			self realOptionsSlide.
-			self commitsLateSlide.
-			self smallIsBeautifulSlide.
-			self gtoolkitIsSmall.
-			self wardleySlide.
-			self imageSlide.
-			self bddSlide.
+			self cynefinSlide.self experimentsSlide.
+			self realOptionsSlide.self commitsLateSlide.
+			self smallIsBeautifulSlide.self gtoolkitIsSmall.
 			self visualizingTheCode.
-			self integratingStoryTelling.
-			self pharo101Slide.
-			self feedbackInTheDebugger}.
+			self pharo101Slide}.
 	^ slideshow makeArrowsVisible
 ]
 
@@ -94,20 +70,6 @@ DDDPresentation >> experimentsSlide [
 • Late Binding' size: 64 color: self colorTextGray at: 100@350
 ]
 
-{ #category : #'api - instantiation' }
-DDDPresentation >> feedbackInTheDebugger [
-	^ GtTextAndElementSlide new
-		newTextWithFormat: (self subtitleString: 'Feedback in the Debugger');
-		newTextWithFormat:
-			(self
-				descriptionString:
-					'These are all numbers: 2, 42, 2/84. And they all respond to various messages evaluating mathematical expressions.');
-		element: [ GtPlaygroundSlide new
-				snippets: {'40 + 2.' . '42 factorial.' . '2/84.' . '42 class maxVal.'};
-				asElement ];
-		elementWeight: 0.6
-]
-
 { #category : #accessing }
 DDDPresentation >> gettingStartedSlide [
 	^ GtTextAndElementSlide new
@@ -131,64 +93,14 @@ DDDPresentation >> gtoolkitIsSmall [
 		newText: 'GToolkit is Small' asUppercase size: 80 color: self colorTextGray at: 100@200;
 	newText: '• Simple Language
 • Bootstrapped image ~ 200KB
-• Everything is an Object, Message Passing
+• Everything is an Object
+• Message Passing
 • Constant Refactoring' size: 64 color: self colorTextGray at: 100@350
 ]
 
 { #category : #accessing }
 DDDPresentation >> imageDirectory [
 	^(IceRepository registeredRepositoryIncludingPackage: self class package) location /'images'
-]
-
-{ #category : #accessing }
-DDDPresentation >> imageSlide [
-	^(GtFilePictureSlide new 
-		fileReference:self imageDirectory / 'feature-moldable.png';
-	background: Color transparent)
-	
-]
-
-{ #category : #accessing }
-DDDPresentation >> integratingStoryTelling [
-	^ GtTextAndElementSlide new
-		newTextWithFormat: (self subtitleString: 'Integrating Story Telling');
-		newTextWithFormat:
-			(self
-				descriptionString:
-'To keep a system alive over the longer term, certain aspects of the system need to be explained. 
-That explanation can not only be verbally. Keeping those explanations up to date with the development
-of the system is challenging. We propose to integrate it in the development environment, making it 
-suitable for presenting the system, demonstrating design decisions, and teaching the system to new 
-developers');
-		element: [ GtPlaygroundSlide new
-				snippets: {
-'| view |
-view := GtMondrian new.
-view nodes
-	shape: [ 
-		BlElement new
-			border: (BlBorder paint: Color gray width: 1);
-			constraintsDo: [ :c |
-				c padding: (BlInsets all: 5) ] ]; 
-	with: (GtSlide withAllSubclasses);
-	"Builds the content of each class shape."
-	forEach: [ :aClass |
-		view nodes
-			shape: [ :aMethod | 
-				BlElement new
-					size: (5 max: 2* aMethod linesOfCode) @ (5 max: 2* aMethod numLiterals);
-					background: aMethod linesOfCode > 10 ifTrue: [Color red] ifFalse: [Color green];
-					border: (BlBorder paint: Color blue width: 1) ];
-			with: aClass methods.
-		view layout grid].
-view edges
-	fromRightCenter;
-	toLeftCenter;
-	connectToAll: #subclasses.
-view layout horizontalTree.
-^ view '};
-				asElement ];
-		elementWeight: 0.6
 ]
 
 { #category : #'api - instantiation' }
@@ -257,13 +169,6 @@ DDDPresentation >> subtitleString: aString [
 	^ aString asRopedText glamorousRegularFont; fontSize: 40.
 ]
 
-{ #category : #'api - instantiation' }
-DDDPresentation >> successSlide [
-	^DDDSlide new
-		newText: 'Succes' size: 40 color: Color black at: 100@200
-
-]
-
 { #category : #accessing }
 DDDPresentation >> technicalDebt [
 	^DDDSlide new
@@ -330,18 +235,6 @@ view edges
 view layout horizontalTree.
 ^ view '};
 				asElement ]
-]
-
-{ #category : #accessing }
-DDDPresentation >> wardleySlide [
-	^(GtTextSlide new
-				newTextWithFormat:(
-'The technology development model by Simon Wardley shows that
-the area where we should be doing our own development is the area where
-there is a lot of uncertainty. '
-						asRopedText
-						glamorousRegularFont;
-						fontSize: 18))
 ]
 
 { #category : #accessing }
