@@ -81,7 +81,7 @@ DDDPresentation >> create [
 			self pharo101Slide.
 			self feedbackInTheDebugger.
 			(GtLabelAndElementSlide new
-				element: [ GtPager createWrappedOn: (GtClassCoder forClass: MEWorld) ];
+				element: [ GtPager createWrappedOn: (GtClassCoder forClass: DDDSlide) ];
 				newFadedText: 'Taking a look at the class coder.')}.
 	^ slideshow makeArrowsVisible
 ]
