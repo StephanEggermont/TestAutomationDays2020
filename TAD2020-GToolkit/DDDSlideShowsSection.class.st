@@ -13,11 +13,29 @@ DDDSlideShowsSection >> create [
 	cardsContainer addChild: (self 
 		newShowCardWithTitle: 'DDD' 
 		slideshow: [ DDDPresentation  new create ]
-		description: 'On the value of fast feedback for the development process').
+		description: 'On the Value of Fast Feedback for the Development Process').
 	cardsContainer addChild: (self
 		newShowCardWithTitle: 'Pharo 101'
 		slideshow: [ GtPharo101 new create ]
 		description: 'New to Pharo? Take an introductory tutorial.').
 	sectionContainer addChild: cardsContainer.
 	^ sectionContainer
+]
+
+{ #category : #accessing }
+DDDSlideShowsSection >> newShowCardWithTitle: aString slideshow: aSlideShowBlock description: aDescription [
+	^ self
+		newHeaderCardWithTitle: 'Slideshow'
+		description: aDescription
+		size: 200@150
+		content:
+			(aSlideShowBlock value slides first create
+				size: 1200@720;
+				padding: (BlInsets all: 10);
+				beInSingleCompositionLayer) asScalableElement
+		action: [ :card | 
+			self
+				showSpaceWithTitle: aString
+				with: aSlideShowBlock value makeArrowsVisible
+				from: card ]
 ]
