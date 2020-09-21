@@ -10,7 +10,7 @@
     	baseline: 'TAD2020' ;
      load.
 ```
-then open the git browseer on the repo, open it and load the missing package.
+then open the git browser on the repo, open it and load the missing package.
 
  ## Installing Pharo 8
  In a Pharo 8, open a playground and do-it: 
