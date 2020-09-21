@@ -62,6 +62,17 @@ DDDPresentation >> colorTextRed [
 	^(Color fromHexString: 'EB3D44')
 ]
 
+{ #category : #accessing }
+DDDPresentation >> commitsLateSlide [
+	^DDDSlide new
+		newText: 'GToolkit commits late' asUppercase size: 80 color: self colorTextGray at: 100@200;
+		newText: 
+'• Compile at Runtime
+• Object decides what to do with a message
+• Visibility of System State
+• Example (test) Driven Design' size: 64 color: self colorTextGray at: 100@350
+]
+
 { #category : #'api - instantiation' }
 DDDPresentation >> create [
 	| slideshow |
@@ -72,6 +83,8 @@ DDDPresentation >> create [
 			self whyGtoolkit.self softwareGrows.self technicalDebt.
 			self whatCanWeDoSlide.
 			self cynefinSlide.
+			self experimentsSlide.
+			self commitsLateSlide.
 			self wardleySlide.
 			self agileManifestoSlide.
 			self imageSlide.
@@ -79,10 +92,7 @@ DDDPresentation >> create [
 			self visualizingTheCode.
 			self integratingStoryTelling.
 			self pharo101Slide.
-			self feedbackInTheDebugger.
-			(GtLabelAndElementSlide new
-				element: [ GtPager createWrappedOn: (GtClassCoder forClass: DDDSlide) ];
-				newFadedText: 'Taking a look at the class coder.')}.
+			self feedbackInTheDebugger}.
 	^ slideshow makeArrowsVisible
 ]
 
@@ -96,6 +106,17 @@ DDDPresentation >> cynefinSlide [
 { #category : #accessing }
 DDDPresentation >> descriptionString: aString [
 	^ aString asRopedText glamorousRegularFont; fontSize: 20.
+]
+
+{ #category : #accessing }
+DDDPresentation >> experimentsSlide [
+	^DDDSlide new
+		newText: 'Experiments in GToolkit' asUppercase size: 80 color: self colorTextGray at: 100@200;
+		newText: 
+'• Fast Feedback
+• Adaptable Tools
+• Visibility of System State
+• Late Binding' size: 64 color: self colorTextGray at: 100@350
 ]
 
 { #category : #'api - instantiation' }
