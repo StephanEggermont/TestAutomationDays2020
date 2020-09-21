@@ -44,6 +44,7 @@ DDDPresentation >> create [
 			self smallIsBeautifulSlide.self gtoolkitIsSmall.
 			self visualizingTheCode.
 			self reuseSlide. self reuseInGToolkitSlide.
+			self wardleySlide.
 			self tourSlide.
 			self pharo101Slide.
 			self underTheHood}.
@@ -294,6 +295,12 @@ view edges
 view layout horizontalTree.
 ^ view '};
 				asElement ]
+]
+
+{ #category : #accessing }
+DDDPresentation >> wardleySlide [
+	^GtFilePictureSlide new
+		fileReference: self imageDirectory / 'wardley.png'
 ]
 
 { #category : #accessing }
