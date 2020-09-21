@@ -1,7 +1,7 @@
 Class {
 	#name : #DDDShadowLook,
 	#superclass : #BrShadowLook,
-	#category : #'TAD2020-Brick-! Core - Looks'
+	#category : #'TAD2020-GToolkit'
 }
 
 { #category : #accessing }
