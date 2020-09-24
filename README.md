@@ -1,5 +1,9 @@
 # TestAutomationDays2020
- Debugger Driven Development workshop
+ Debugger Driven Development workshop. 
+ 
+ ### notes 
+ This workshop was given on september 22, 2020, using release 145 https://github.com/feenkcom/gtoolkit/releases/tag/v0.8.145 of GToolkit.
+ A significant memory leak https://github.com/feenkcom/gtoolkit/issues/1478 was fixed in release 160.
  
  ## Installing in GToolkit
  Open a playground and do-it:
