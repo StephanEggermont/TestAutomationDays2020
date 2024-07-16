@@ -275,7 +275,7 @@ DDDPresentation >> visualizingTheCode [
 				snippets:
 					{'| view |
 view := GtMondrian new.
-view nodes with: (GtSlide withAllSubclasses).
+view nodes with: (GtLiveSlide withAllSubclasses).
 view' . '| view |
 view := GtMondrian new.
 view nodes
@@ -284,7 +284,7 @@ view nodes
 			border: (BlBorder paint: Color gray width: 1);
 			constraintsDo: [ :c |
 				c padding: (BlInsets all: 5) ] ]; 
-	with: (GtSlide withAllSubclasses);
+	with: (GtLiveSlide withAllSubclasses);
 	"Builds the content of each class shape."
 	forEach: [ :aClass |
 		view nodes
