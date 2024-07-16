@@ -1,11 +1,11 @@
 Class {
-	#name : #DDDShadowLook,
-	#superclass : #BrShadowLook,
+	#name : #DDDShadowAptitude,
+	#superclass : #BrShadowAptitude,
 	#category : #'TAD2020-GToolkit'
 }
 
 { #category : #accessing }
-DDDShadowLook >> initialize [
+DDDShadowAptitude >> initialize [
 	super initialize.
 	self addChangeProperty: #(widget effect) withCopy: [ self shadow ].
 	shadow := BlGaussianShadowEffect

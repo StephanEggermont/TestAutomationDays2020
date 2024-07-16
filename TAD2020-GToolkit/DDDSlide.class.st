@@ -48,19 +48,18 @@ DDDSlide >> initialize [
 
 { #category : #accessing }
 DDDSlide >> newText: aString size: aSize color: aColor at: aPosition [
-	|attr|
-	attr := {
-		BlFontFamilyAttribute named: 'Helvetica'.
-		BlFontWeightAttribute light.
-		BlFontSizeAttribute size: aSize.
-		BlTextForegroundAttribute paint: aColor.
-	}.
-	self positionedElements add: (BrEditor new
-		relocate: aPosition;
-		look: (BrGlamorousEditorLook new lineSpacing: 5);
-		margin: (BlInsets all: 50);
-		text: (aString asRopedText attributes: attr);
-		beReadOnlyWithSelection)
+	| attr |
+	attr := {BlFontFamilyAttribute named: 'Helvetica'.
+			BlFontWeightAttribute light.
+			BlFontSizeAttribute size: aSize.
+			BlTextForegroundAttribute paint: aColor}.
+	self positionedElements
+		add: (BrEditor new
+				relocate: aPosition;
+				aptitude: (BrGlamorousEditorAptitude new lineSpacing: 5);
+				margin: (BlInsets all: 50);
+				text: (aString asRopedText attributes: attr);
+				beReadOnlyWithSelection)
 ]
 
 { #category : #accessing }

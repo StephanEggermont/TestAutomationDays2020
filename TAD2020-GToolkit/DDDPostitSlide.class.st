@@ -13,30 +13,27 @@ DDDPostitSlide >> create [
 		constraintsDo: [ :c | 
 			c horizontal matchParent.
 			c vertical matchParent ];
-		addChild:
-			(BlElement new
+		addChild: (BlElement new
 				size: 1200 @ 720;
 				relocate: 0 @ 0;
-					addChild:
-					(BlElement new
-						size: 431@347;
+				addChild: (BlElement new
+						size: 431 @ 347;
 						padding: (BlInsets all: 20);
 						addChild: (BrEditor new
-							look: (BrGlamorousEditorLook new lineSpacing: 5);
-							margin: (BlInsets all: 50);
-							hMatchParent;
-							vFitContent;
-							text: self postitText;
-							beReadOnlyWithSelection);
-						look: DDDShadowLook new;
+								aptitude: (BrGlamorousEditorAptitude new lineSpacing: 5);
+								margin: (BlInsets all: 50);
+								hMatchParent;
+								vFitContent;
+								text: self postitText;
+								beReadOnlyWithSelection);
+						aptitude: DDDShadowAptitude new;
 						background: self textPostItYellow;
-						transformDo: [ :aTransform |
+						transformDo: [ :aTransform | 
 							aTransform
-								translateBy: 100@200;
-								origin: (BlAffineTransformationPositionOrigin position: 0@0);
-		rotateBy: -12.5; 
-		apply]))
-
+								translateBy: 100 @ 200;
+								origin: (BlAffineTransformationPositionOrigin position: 0 @ 0);
+								rotateBy: -12.5;
+								apply ]))
 ]
 
 { #category : #accessing }
