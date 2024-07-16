@@ -133,7 +133,7 @@ DDDPresentation >> pharo101Slide [
 		textWithFormat:
 			'Want to learn more about the Pharo syntax? Follow the show below'
 				asRopedText glamorousRegularFont;
-		slideshow: [ GtPharo101 new create ] withTitle: 'Pharo101'
+		slideshow: [ GtLiveShow createWithArrowsVisible: GtPharo101 new ] withTitle: 'Pharo101'
 ]
 
 { #category : #accessing }
@@ -241,7 +241,7 @@ DDDPresentation >> tourSlide [
 		textWithFormat:
 			'A tour through GToolkit'
 				asRopedText glamorousRegularFont;
-		slideshow: [ GtTour new create ] withTitle: 'Tour'
+		slideshow: [ GtLiveShow createWithArrowsVisible: GtTour new ] withTitle: 'Tour'
 ]
 
 { #category : #accessing }
