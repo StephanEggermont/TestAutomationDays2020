@@ -76,13 +76,13 @@ DDDPresentation >> experimentsSlide [
 
 { #category : #accessing }
 DDDPresentation >> gettingStartedSlide [
-	^ GtLabelAndElementSlide new
+	^ GtLabelAndElementLiveSlide new
 		newTextWithFormat: (self subtitleString: 'Getting started');
 		newTextWithFormat:
 			(self descriptionString: 'Install the workshop in the image,');
 		newTextWithFormat:
 			(self descriptionString: 'then open the git tab and load the missing package ');
-		element: [ GtPlaygroundSlide new
+		element: [ GtPlaygroundLiveSlide new
 				snippets:
 					{' Metacello new
 	githubUser: ''StephanEggermont'' project: ''TestAutomationDays2020'' commitish: #master path: '''';
@@ -129,7 +129,7 @@ DDDPresentation >> outOfACornerSlide [
 
 { #category : #'api - instantiation' }
 DDDPresentation >> pharo101Slide [
-	^ GtSlideshowSlide new
+	^ GtSlideshowLiveSlide new
 		textWithFormat:
 			'Want to learn more about the Pharo syntax? Follow the show below'
 				asRopedText glamorousRegularFont;
@@ -226,7 +226,7 @@ DDDPresentation >> titleSlide [
 	ti :=('Debugger Driven Development' asRopedText
 				attributes: self slideTitleTextAttributes
 				from: 1 to: 27).
-	^ GtLabelAndElementSlide new
+	^ GtLabelAndElementLiveSlide new
 		newTextWithFormat: ti;
 		newTextWithFormat: sub;
 		element: [(BlElement new 
@@ -237,7 +237,7 @@ DDDPresentation >> titleSlide [
 
 { #category : #accessing }
 DDDPresentation >> tourSlide [
-	^ GtSlideshowSlide new
+	^ GtSlideshowLiveSlide new
 		textWithFormat:
 			'A tour through GToolkit'
 				asRopedText glamorousRegularFont;
@@ -246,13 +246,13 @@ DDDPresentation >> tourSlide [
 
 { #category : #accessing }
 DDDPresentation >> underTheHood [
-	^ GtLabelAndElementSlide new
+	^ GtLabelAndElementLiveSlide new
 		newTextWithFormat: (self subtitleString: 'Going to the Morphic world' );
 		newTextWithFormat:
 			(self
 				descriptionString:
 					'And switching to the Pharo style exercises');
-		element: [ GtPlaygroundSlide new
+		element: [ GtPlaygroundLiveSlide new
 				snippets: { 'PharoLightTheme beCurrent' . '"First open the morphic world now"
 TAD2020Tutorial open' . 'GTPlayground open'.'"Switch to morphic debugger"
 GTGenericStackDebugger register'.'"And back to the GToolkit one"
@@ -262,7 +262,7 @@ GtMoldableDebugger register'};
 
 { #category : #accessing }
 DDDPresentation >> visualizingTheCode [
-	^ GtLabelAndElementSlide new
+	^ GtLabelAndElementLiveSlide new
 		newTextWithFormat: (self subtitleString: 'Visualizing the Code');
 		newTextWithFormat:
 			(self
@@ -271,7 +271,7 @@ DDDPresentation >> visualizingTheCode [
 		newTextWithFormat:
 			(self
 				descriptionString: ' Here we show the definition of different kinds of slides.');
-		element: [ GtPlaygroundSlide new
+		element: [ GtPlaygroundLiveSlide new
 				snippets:
 					{'| view |
 view := GtMondrian new.
@@ -306,7 +306,7 @@ view layout horizontalTree.
 
 { #category : #accessing }
 DDDPresentation >> wardleySlide [
-	^GtFilePictureSlide new
+	^GtFilePictureLiveSlide new
 		fileReference: self imageDirectory / 'wardley.png';
 		background: Color transparent
 ]

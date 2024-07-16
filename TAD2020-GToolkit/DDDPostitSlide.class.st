@@ -1,6 +1,6 @@
 Class {
 	#name : #DDDPostitSlide,
-	#superclass : #GtSlide,
+	#superclass : #GtLiveSlide,
 	#instVars : [
 		'postitText'
 	],

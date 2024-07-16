@@ -1,6 +1,6 @@
 Class {
 	#name : #DDDTitleSlide,
-	#superclass : #GtSlide,
+	#superclass : #AnObsoleteGtSlide,
 	#instVars : [
 		'title',
 		'subtitle',

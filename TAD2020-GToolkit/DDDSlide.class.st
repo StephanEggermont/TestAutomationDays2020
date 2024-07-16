@@ -4,7 +4,7 @@ I just have positioned text with color and size.
 "
 Class {
 	#name : #DDDSlide,
-	#superclass : #GtSlide,
+	#superclass : #GtLiveSlide,
 	#instVars : [
 		'positionedElements'
 	],
