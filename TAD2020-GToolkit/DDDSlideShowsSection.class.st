@@ -16,7 +16,7 @@ DDDSlideShowsSection >> create [
 		description: 'On the Value of Fast Feedback for the Development Process').
 	cardsContainer addChild: (self
 		newShowCardWithTitle: 'Pharo 101'
-		slideshow: [ GtPharo101 new create ]
+		slideshow: [ GtLiveShow createWithArrowsVisible: GtPharo101 new ]
 		description: 'New to Pharo? Take an introductory tutorial.').
 	sectionContainer addChild: cardsContainer.
 	^ sectionContainer
